@@ -1,0 +1,74 @@
+{% extends "index.html" %}<!---->
+{% block main %}
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">{{ page.title }}</h1>
+    {% include "partials/page_info.html" %}
+  </header>
+
+  <section>{{ page.content | safe }}</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  {% if page.taxonomies.tags %}
+  <footer class="mt-12 flex flex-wrap">
+    {% for term_name, terms in page.taxonomies %}<!---->
+    <span class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 dark:bg-white/[8%]"
+      >{{ term_name | title }}
+    </span>
+    {% for term in terms %}<!---->
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="{{ get_taxonomy_url(kind=term_name, name=term) | safe }}"
+      >{{ term }}</a
+    >
+    {% endfor %} {% endfor %}
+  </footer>
+  {% endif %}
+
+  <!-- Post Nav -->
+  {% if not config.extra.disable_post_navigation %}<!---->
+  {% if page.lower or page.higher %}
+  <nav class="mt-12 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    {% if page.higher %}
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="{{ page.higher.permalink }}"
+      ><span class="mr-1.5">←</span><span>{{ page.higher.title }}</span></a
+    >
+    {% endif %}<!---->
+    {% if page.lower %}
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="{{ page.lower.permalink }}"
+      ><span>{{ page.lower.title }}</span><span class="ml-1.5">→</span></a
+    >
+    {% endif %}
+  </nav>
+  {% endif %}<!---->
+  {% endif %}
+
+  <!-- giscus comment -->
+  {% if config.extra.giscus.repo and page.extra.comments %}
+  <div class="giscus mt-12"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="{{ config.extra.giscus.repo }}"
+    data-repo-id="{{ config.extra.giscus.repo_id }}"
+    data-category="{{ config.extra.giscus.category }}"
+    data-category-id="{{ config.extra.giscus.category_id }}"
+    data-mapping="{{ config.extra.giscus.mapping | default(value=`pathname`) }}"
+    data-strict="{{ config.extra.giscus.strict | default(value=`1`) }}"
+    data-reactions-enabled="{{ config.extra.giscus.reactions_enabled | default(value=`0`) }}"
+    data-emit-metadata="{{ config.extra.giscus.emit_metadata | default(value=`0`) }}"
+    data-input-position="{{ config.extra.giscus.input_position | default(value=`top`) }}"
+    data-theme="{{ config.extra.giscus.theme | default(value=`light`) }}"
+    data-lang="{{ config.extra.giscus.lang | default(value=`en`) }}"
+    data-loading="{{ config.extra.giscus.loading | default(value=`lazy`) }}"
+    crossorigin="anonymous"
+    async
+  ></script>
+  {% endif %}
+</article>
+{% endblock main %}

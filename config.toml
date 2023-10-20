@@ -1,0 +1,90 @@
+# The base URL of the site; the only required configuration variable.
+base_url = "https://st1020.github.io/kita/"
+
+# The site title and description; used in feeds by default.
+title = "Kita"
+description = "Kita is a clean, elegant and simple blog theme for Zola."
+
+# The default site author.
+author = "st1020"
+
+# The default language; used in feeds.
+default_language = "en"
+
+# When set to "true", a feed is automatically generated.
+generate_feed = true
+
+# The filename to use for the feed. Used as the template filename, too.
+# Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
+# There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
+feed_filename = "atom.xml"
+
+# The taxonomies to be rendered for the site and their configuration of the default languages
+# Example:
+#     taxonomies = [
+#       {name = "tags", feed = true}, # each tag will have its own feed
+#       {name = "tags"}, # you can have taxonomies with the same name in multiple languages
+#       {name = "categories", paginate_by = 5},  # 5 items per page for a term
+#       {name = "authors"}, # Basic definition: no feed or pagination
+#     ]
+#
+taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
+
+# Configuration of the Markdown rendering
+[markdown]
+# When set to "true", all code blocks are highlighted.
+highlight_code = true
+
+# A list of directories used to search for additional `.sublime-syntax` and `.tmTheme` files.
+extra_syntaxes_and_themes = []
+
+# The theme to use for code highlighting.
+# See below for list of allowed values.
+highlight_theme = "base16-ocean-dark"
+
+[extra.style]
+# The custom background color.
+# bg_color = ""
+
+# The custom background color in dark mode.
+# bg_dark_color = ""
+
+# Enable header blur.
+# header_blur = true
+
+# The custom header color.
+# header_color = ""
+
+# The custom header color in dark mode.
+# header_dark_color = ""
+
+[extra.profile]
+name = "Kita - Zola Theme"
+bio = "Kita is a clean, elegant and simple blog theme for Zola."
+avatar_url = "github.svg"
+avatar_invert = true
+
+[[extra.profile.social]]
+name = "github"
+url = "https://github.com/st1020/kita"
+
+[[extra.profile.social]]
+name = "twitter"
+url = "https://github.com/st1020/kita"
+
+[[extra.profile.social]]
+name = "rss"
+url = "/atom.xml"
+
+[[extra.menu]]
+name = "Tags"
+url = "/tags"
+
+[[extra.menu]]
+name = "About"
+url = "/about"
+
+[extra.footer]
+since = 2020
+license = "CC BY-SA 4.0"
+license_url = "https://creativecommons.org/licenses/by-sa/4.0/deed"

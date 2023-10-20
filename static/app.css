@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply h-full;
+  }
+
+  html {
+    --bg: transparent;
+    --bg-dark: transparent;
+    --header: transparent;
+    --header-dark: transparent;
+  }
+
+  body {
+    -webkit-tap-highlight-color: transparent;
+    background: var(--bg);
+  }
+
+  .dark body {
+    background: var(--bg-dark);
+  }
+}
+
+@layer utilities {
+  .not-ready * {
+    @apply !transition-none;
+  }
+
+  .btn-menu::before,
+  .btn-menu::after {
+    @apply block h-[2px] w-5 bg-black duration-200 content-[''] dark:invert;
+  }
+
+  .open {
+    @apply overflow-hidden;
+  }
+
+  .open .btn-menu::before {
+    @apply w-6 translate-y-[5.5px] rotate-45;
+  }
+
+  .open .btn-menu::after {
+    @apply w-6 -translate-y-[5.5px] -rotate-45;
+  }
+
+  .nav-wrapper {
+    @apply hidden lg:flex;
+  }
+
+  .open .nav-wrapper {
+    @apply flex;
+  }
+
+  article {
+    @apply text-lg;
+  }
+
+  .header {
+    background-color: var(--header);
+  }
+
+  .dark .header {
+    background: var(--header-dark);
+  }
+
+  .blur-header {
+    @apply bg-black/10 backdrop-blur dark:bg-white/10;
+  }
+}

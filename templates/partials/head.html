@@ -1,0 +1,84 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    {% if page.title %}{{ config.title }} - {{ page.title }}{% else %}{{ config.title }}{% endif %}
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  <!-- Author -->
+  {% if page %}
+  <meta name="description" content="{{ page.summary | default(value=page.title) | safe }}" />
+  <meta name="author" content="{{ page.extra.author | default(value=page.title) }}" />
+  {% else %}
+  <meta name="description" content="{{ config.description | default(value=`A personal blog`) }}" />
+  <meta name="author" content="{{ config.author | default(value=config.title) }}" />
+  {% endif %}
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="{{ get_url(path=`main.css`) }}" />
+  <style>
+    :root {
+      --bg: {{ config.extra.style.bg_color | default(value="#f4f4f5") }};
+      --bg-dark: {{ config.extra.style.bg_dark_color | default(value="#18181b") }};
+      --header: {{ config.extra.style.header_color | default(value="#e4e4e7") }};
+      --header-dark: {{ config.extra.style.header_dark_color | default(value="#27272a") }};
+    }
+  </style>
+
+  <!-- Avatar -->
+  {% if config.extra.profile.avatar_url %}
+  <link rel="preload" as="image" href="{{ config.extra.profile.avatar_url }}" />
+  {% endif %}
+
+  <!-- Social List -->
+  {% if config.extra.profile.social %}
+  <!---->
+  {% for social in config.extra.profile.social %}
+  <link rel="preload" as="image" href="{{ get_url(path=social.name ~ `.svg`) }}" />
+  {% endfor %}
+  <!---->
+  {% endif %}
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="{{ get_url(path=`theme.svg`) }}" />
+
+  <!-- Math -->
+  {% if page.extra.math | default(value=config.extra.math) %}
+  <!---->
+  {% include "partials/math.html" %}
+  <!---->
+  {% endif %}
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ get_url(path=`favicon.ico`) }}" />
+  <link rel="apple-touch-icon" href="{{ get_url(path=`apple-touch-icon.png`) }}" />
+
+  <!-- Feeds -->
+  {% if config.generate_feed %} {% if config.feed_filename == "atom.xml" %}
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="{{ get_url(path=`atom.xml`) }}"
+  />
+  {% elif config.feed_filename == "rss.xml" %}
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href="{{ get_url(path=`rss.xml`) }}"
+  />
+  {% endif %}
+  <!---->
+  {% endif %}
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ page.permalink | default(value=get_url(path=``)) }}" />
+</head>
