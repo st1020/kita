@@ -61,7 +61,7 @@ highlight_theme = "base16-ocean-dark"
 [extra.profile]
 name = "Kita - Zola Theme"
 bio = "Kita is a clean, elegant and simple blog theme for Zola."
-avatar_url = "github.svg"
+avatar_url = "./icons/github.svg"
 avatar_invert = true
 
 [[extra.profile.social]]
