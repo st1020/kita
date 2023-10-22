@@ -146,3 +146,10 @@ John-->>Alice: Great!
 John->>Bob: How about you?
 Bob-->>John: Jolly good!
 {% end %}
+
+## Admonition
+
+{% admonition(type="tip", title="Tip") %}
+
+This is a tip.
+{% end %}
