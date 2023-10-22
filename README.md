@@ -12,6 +12,7 @@ This theme is based on Hugo theme [hugo-paper](https://github.com/nanxiaobei/hug
 - Dark mode
 - Social icons
 - Taxonomies support
+- Table of Content
 - SEO Friendly
 - Comments using [Giscus](https://giscus.app/)
 - Mathematical notations using [KaTeX](https://katex.org/)

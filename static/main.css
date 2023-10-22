@@ -1232,6 +1232,10 @@ body {
   margin-top: 4rem;
 }
 
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .block {
   display: block;
 }
@@ -1475,6 +1479,11 @@ body {
   padding-bottom: 1rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -1505,6 +1514,18 @@ body {
 
 .pt-32 {
   padding-top: 8rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
 }
 
 .text-center {
@@ -1729,6 +1750,10 @@ article {
 
 .hover\:bg-black\/\[2\%\]:hover {
   background-color: rgb(0 0 0 / 2%);
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .active\:scale-95:active {
