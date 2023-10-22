@@ -16,6 +16,7 @@ This theme is based on Hugo theme [hugo-paper](https://github.com/nanxiaobei/hug
 - SEO Friendly
 - Comments using [Giscus](https://giscus.app/)
 - Mathematical notations using [KaTeX](https://katex.org/)
+- Diagrams and charts using [Mermaid](https://mermaid.js.org/)
 
 ## Installation
 
