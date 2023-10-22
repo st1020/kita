@@ -31,6 +31,7 @@
     }
   </style>
 
+  {% if section.path is defined and section.path == "/" %}
   <!-- Avatar -->
   {% if config.extra.profile.avatar_url %}
   <link rel="preload" as="image" href="{{ config.extra.profile.avatar_url }}" />
@@ -42,6 +43,8 @@
   {% for social in config.extra.profile.social %}
   <link rel="preload" as="image" href="{{ get_url(path=social.name ~ `.svg`) }}" />
   {% endfor %}
+  <!---->
+  {% endif %}
   <!---->
   {% endif %}
 
