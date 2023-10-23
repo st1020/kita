@@ -18,7 +18,12 @@
       </div>
       <div class="flex gap-x-2">
         {% for link in project.links %}
-        <a class="underline" href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+        <a
+          class="underline"
+          href="{{ link.url | replace(from=`$BASE_URL`, to=config.base_url) | safe  }}"
+          target="_blank"
+          >{{ link.name }}</a
+        >
         {% endfor %}
       </div>
     </div>

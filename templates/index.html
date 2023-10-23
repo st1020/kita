@@ -38,7 +38,7 @@
             <a
               class="primary-link h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat]"
               style="--url: url(./icons/{{ social.name }}.svg)"
-              href="{{ social.url }}"
+              href="{{ social.url | replace(from=`$BASE_URL`, to=config.base_url) | safe  }}"
               target="_blank"
               rel="{% if social.name == `rss` %}alternate{% else %}me{% endif %}"
             >

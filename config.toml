@@ -1,5 +1,5 @@
 # The base URL of the site; the only required configuration variable.
-base_url = "https://st1020.github.io/kita/"
+base_url = "https://st1020.github.io/kita"
 
 # The site title and description; used in feeds by default.
 title = "Kita"
@@ -74,23 +74,23 @@ url = "https://github.com/st1020/kita"
 
 [[extra.profile.social]]
 name = "rss"
-url = "/atom.xml"
+url = "$BASE_URL/atom.xml"
 
 [[extra.menu]]
 name = "Projects"
-url = "/projects"
+url = "$BASE_URL/projects"
 
 [[extra.menu]]
 name = "Archive"
-url = "/archive"
+url = "$BASE_URL/archive"
 
 [[extra.menu]]
 name = "Tags"
-url = "/tags"
+url = "$BASE_URL/tags"
 
 [[extra.menu]]
 name = "About"
-url = "/about"
+url = "$BASE_URL/about"
 
 [extra.footer]
 since = 2020
