@@ -36,7 +36,7 @@
           <nav class="flex justify-start space-x-3 dark:invert">
             {% for social in config.extra.profile.social %}
             <a
-              class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat]"
+              class="primary-link h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat]"
               style="--url: url(./icons/{{ social.name }}.svg)"
               href="{{ social.url }}"
               target="_blank"

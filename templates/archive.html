@@ -13,7 +13,7 @@
     {% for post in posts %}
     <li>
       <div class="my-2 flex items-center justify-between">
-        <a class="no-underline" href="{{ post.permalink }}">{{ post.title }}</a>
+        <a class="secondary-link" href="{{ post.permalink }}">{{ post.title }}</a>
         <time class="font-mono text-sm opacity-60">{{ post.date | date(format="%m-%d") }}</time>
       </div>
     </li>

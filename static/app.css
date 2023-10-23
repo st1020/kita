@@ -70,4 +70,24 @@
   .blur-header {
     @apply bg-black/10 backdrop-blur dark:bg-white/10;
   }
+
+  .block-bg {
+    @apply bg-black/[3%] dark:bg-white/[8%];
+  }
+
+  .block-hover {
+    @apply hover:bg-black/[5%] dark:hover:bg-white/[11%];
+  }
+
+  .block-hover-mask {
+    @apply hover:bg-black/[2%] dark:hover:bg-white/[3%];
+  }
+
+  .primary-link {
+    @apply text-black no-underline hover:opacity-80 dark:text-white;
+  }
+
+  .secondary-link {
+    @apply text-[var(--tw-prose-body)] no-underline hover:text-black dark:hover:text-white;
+  }
 }

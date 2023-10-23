@@ -7,7 +7,7 @@
   </header>
 
   {% if page.toc %}
-  <div class="mb-12 flex rounded-lg bg-black/[3%] p-2 text-lg dark:bg-white/[8%]">
+  <div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
     <details>
       <summary class="cursor-pointer py-1 pl-4">
         <span>Table of Contents</span>
@@ -51,12 +51,10 @@
     {% endfor %}<!---->
     {% for term_name in term_names | sort %}<!---->
     <div class="mb-2 flex flex-wrap">
-      <span class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 dark:bg-white/[8%]"
-        >{{ term_name | title }}
-      </span>
+      <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">{{ term_name | title }} </span>
       {% for term in page.taxonomies[term_name] %}<!---->
       <a
-        class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+        class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
         href="{{ get_taxonomy_url(kind=term_name, name=term) | safe }}"
         >{{ term }}</a
       >
@@ -69,17 +67,17 @@
   <!-- Post Nav -->
   {% if not config.extra.disable_post_navigation %}<!---->
   {% if page.lower or page.higher %}
-  <nav class="mt-12 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+  <nav class="block-bg mt-12 flex rounded-lg text-lg">
     {% if page.higher %}
     <a
-      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
       href="{{ page.higher.permalink }}"
       ><span class="mr-1.5">←</span><span>{{ page.higher.title }}</span></a
     >
     {% endif %}<!---->
     {% if page.lower %}
     <a
-      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
       href="{{ page.lower.permalink }}"
       ><span>{{ page.lower.title }}</span><span class="ml-1.5">→</span></a
     >
