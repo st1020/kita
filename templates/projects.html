@@ -21,6 +21,7 @@
         <a
           class="underline"
           href="{{ link.url | replace(from=`$BASE_URL`, to=config.base_url) | safe  }}"
+          rel="noopener"
           target="_blank"
           >{{ link.name }}</a
         >
