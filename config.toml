@@ -77,6 +77,10 @@ name = "rss"
 url = "/atom.xml"
 
 [[extra.menu]]
+name = "Projects"
+url = "/projects"
+
+[[extra.menu]]
 name = "Tags"
 url = "/tags"
 
