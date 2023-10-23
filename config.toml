@@ -81,6 +81,10 @@ name = "Projects"
 url = "/projects"
 
 [[extra.menu]]
+name = "Archive"
+url = "/archive"
+
+[[extra.menu]]
 name = "Tags"
 url = "/tags"
 
