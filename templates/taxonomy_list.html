@@ -7,9 +7,8 @@
   {% for term in terms %}
   <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
     <h3 class="my-4 text-xl font-bold text-black dark:text-white">
-      <a class="primary-link" href="{{ term.permalink }}">
-        #{{ term.name }} - {{ term.page_count }}
-      </a>
+      <a class="primary-link" href="{{ term.permalink }}"> #{{ term.name }} </a>
+      <sup class="opacity-60">{{ term.page_count }}</sup>
     </h3>
 
     {%for page in term.pages | slice(end=5) %}

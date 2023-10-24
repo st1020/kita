@@ -6,7 +6,7 @@
 {% set section = get_section(path=page.extra.section) %}<!---->
 
 {% for year, posts in section.pages | group_by(attribute="year") %}
-<h2>{{ year }}</h2>
+<h2>{{ year }} <sup class="opacity-60">{{ posts | length }}</sup></h2>
 
 <div class="not-prose pl-6">
   <ul>
