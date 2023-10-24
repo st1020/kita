@@ -1282,10 +1282,6 @@ body {
   height: 100%;
 }
 
-.min-h-\[12rem\] {
-  min-height: 12rem;
-}
-
 .min-h-\[3\.5rem\] {
   min-height: 3.5rem;
 }
