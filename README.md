@@ -51,4 +51,4 @@ See the `extra` section in [config.toml](https://github.com/st1020/kita/blob/mai
 
 [MIT License](https://github.com/st1020/kita/blob/main/LICENSE)
 
-Copyright (c) 2013-present, st1020
+Copyright (c) 2023-present, st1020
