@@ -10,8 +10,13 @@
 
 {% for page in pages %}
 <section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
+  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6">
+  <div class="banner">
+    {% if page.extra.local_image %}
+    <img src="{{get_url(path=page.extra.local_image)}}" alt="banner">
+    {%endif%}
+  </div>
+
   <h2 class="!my-0 pb-1 font-bold !leading-none">{{ page.title }}</h2>
 
   <div class="not-prose my-1 truncate">
@@ -32,18 +37,12 @@
 {% if paginator is defined %}
 <nav class="mt-16 flex">
   {% if paginator.previous %}
-  <a
-    class="rounded-full bg-black px-4 py-3 text-sm text-white no-underline shadow duration-100 active:scale-95 dark:bg-white/80 dark:text-black"
-    href="{{ paginator.previous }}"
-    >← Prev Page</a
-  >
+  <a class="rounded-full bg-black px-4 py-3 text-sm text-white no-underline shadow duration-100 active:scale-95 dark:bg-white/80 dark:text-black"
+    href="{{ paginator.previous }}">← Prev Page</a>
   {% endif %}<!---->
   {% if paginator.next %}
-  <a
-    class="ml-auto rounded-full bg-black px-4 py-3 text-sm text-white no-underline shadow duration-100 active:scale-95 dark:bg-white/80 dark:text-black"
-    href="{{ paginator.next }}"
-    >Next Page →</a
-  >
+  <a class="ml-auto rounded-full bg-black px-4 py-3 text-sm text-white no-underline shadow duration-100 active:scale-95 dark:bg-white/80 dark:text-black"
+    href="{{ paginator.next }}">Next Page →</a>
   {% endif %}
 </nav>
 {% endif %}

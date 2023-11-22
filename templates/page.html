@@ -5,7 +5,11 @@
     <h1 class="!my-0 pb-2.5">{{ page.title }}</h1>
     {% include "partials/page_info.html" %}
   </header>
-
+  <div class="banner">
+    {% if page.extra.local_image %}
+    <img src="{{get_url(path=page.extra.local_image)}}" alt="banner">
+    {%endif%}
+  </div>
   {% if page.toc %}
   <div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
     <details>
