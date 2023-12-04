@@ -6,6 +6,7 @@ description = "Sample article showcasing basic Markdown syntax and formatting fo
 tags = ["markdown", "css", "html"]
 [extra]
 mermaid = true
+cover_image = "images/markdown-content.png"
 +++
 
 This article offers a sample of basic Markdown syntax that can be used in Zola content files, also it shows whether basic HTML elements are decorated with CSS in a Zola theme.
