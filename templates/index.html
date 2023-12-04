@@ -19,7 +19,7 @@
         >
           <img
             class="{% if config.extra.profile.avatar_invert %}dark:invert{% endif %} my-0 aspect-square w-16 rounded-full !bg-black/5 hover:animate-spin"
-            src="{{ config.extra.profile.avatar_url }}"
+            src="{{ get_url(path=config.extra.profile.avatar_url) }}"
             alt="{{ config.extra.profile.name | default(value=config.title) }}"
           />
         </div>

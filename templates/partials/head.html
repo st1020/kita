@@ -34,7 +34,7 @@
   {% if section.path is defined and section.path == "/" %}
   <!-- Avatar -->
   {% if config.extra.profile.avatar_url %}
-  <link rel="preload" as="image" href="{{ config.extra.profile.avatar_url }}" />
+  <link rel="preload" as="image" href="{{ get_url(path=config.extra.profile.avatar_url) }}" />
   {% endif %}
 
   <!-- Social List -->
