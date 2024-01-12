@@ -1,47 +1,16 @@
-# The base URL of the site; the only required configuration variable.
-base_url = "https://st1020.github.io/kita"
++++
+title = "Theme Config Guide"
+date = "2022-10-20"
+description = "The config fo Kita theme."
+[taxonomies]
+tags = ["theme", "markdown"]
++++
 
-# The site title and description; used in feeds by default.
-title = "Kita"
-description = "Kita is a clean, elegant and simple blog theme for Zola."
+You can customize Kita theme by editing `config.toml`.
 
-# The default site author.
-author = "st1020"
+Here are all the kita theme options:
 
-# The default language; used in feeds.
-default_language = "en"
-
-# When set to "true", a feed is automatically generated.
-generate_feed = true
-
-# The filename to use for the feed. Used as the template filename, too.
-# Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
-# There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
-feed_filename = "atom.xml"
-
-# The taxonomies to be rendered for the site and their configuration of the default languages
-# Example:
-#     taxonomies = [
-#       {name = "tags", feed = true}, # each tag will have its own feed
-#       {name = "tags"}, # you can have taxonomies with the same name in multiple languages
-#       {name = "categories", paginate_by = 5},  # 5 items per page for a term
-#       {name = "authors"}, # Basic definition: no feed or pagination
-#     ]
-#
-taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
-
-# Configuration of the Markdown rendering
-[markdown]
-# When set to "true", all code blocks are highlighted.
-highlight_code = true
-
-# A list of directories used to search for additional `.sublime-syntax` and `.tmTheme` files.
-extra_syntaxes_and_themes = []
-
-# The theme to use for code highlighting.
-# See below for list of allowed values.
-highlight_theme = "base16-ocean-dark"
-
+```toml
 # The Kita theme style config.
 [extra]
 # Enable KaTex math formula support globally.
@@ -128,3 +97,4 @@ input_position = "top"
 theme = "light"
 lang = "en"
 loading = "lazy"
+```
