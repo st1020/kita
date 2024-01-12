@@ -98,7 +98,8 @@
   {% endif %}
 
   <!-- giscus comment -->
-  {% if config.extra.giscus.repo and page.extra.comments %}
+  {% if page.extra.comment | default(value=config.extra.comment) %}<!---->
+  {% if config.extra.giscus.repo %}
   <div class="giscus mt-12"></div>
   <script
     src="https://giscus.app/client.js"
@@ -117,6 +118,7 @@
     crossorigin="anonymous"
     async
   ></script>
+  {% endif %}<!---->
   {% endif %}
 </article>
 {% endblock main %}
