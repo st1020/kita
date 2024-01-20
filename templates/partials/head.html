@@ -61,18 +61,20 @@
 
   <!-- Mermaid -->
   {% if page.extra.mermaid | default(value=config.extra.mermaid) %}
-  <script type="module">
-    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-    mermaid.initialize({ startOnLoad: true });
-  </script>
+  <!---->
+  {% include "partials/mermaid.html" %}
+  <!---->
   {% endif %}
+  <!---->
 
   <!-- Favicon -->
   <link rel="icon" href="{{ get_url(path=`favicon.ico`) }}" />
   <link rel="apple-touch-icon" href="{{ get_url(path=`apple-touch-icon.png`) }}" />
 
   <!-- Feeds -->
-  {% if config.generate_feed %} {% if config.feed_filename == "atom.xml" %}
+  {% if config.generate_feed %}
+  <!---->
+  {% if config.feed_filename == "atom.xml" %}
   <link
     rel="alternate"
     type="application/atom+xml"

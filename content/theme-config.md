@@ -19,8 +19,6 @@ math = false
 mermaid = false
 # Enable comment support globally.
 comment = false
-# Disable the post navigation.
-disable_post_navigation = false
 
 [extra.style]
 # The custom background color.

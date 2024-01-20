@@ -15,110 +15,24 @@
     />
   </figure>
   {% endif %}
-  <!---->
 
-  {% if page.toc %}
-  <div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
-    <details>
-      <summary class="cursor-pointer py-1 pl-4">
-        <span>Table of Contents</span>
-      </summary>
-      <div class="px-2">
-        <ul>
-          {% for h1 in page.toc %}
-          <li>
-            <a class="no-underline hover:underline" href="{{ h1.permalink | safe }}"
-              >{{ h1.title }}</a
-            >
-            {% if h1.children %}
-            <ul>
-              {% for h2 in h1.children %}
-              <li>
-                <a class="no-underline hover:underline" href="{{ h2.permalink | safe }}"
-                  >{{ h2.title }}</a
-                >
-              </li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </details>
-  </div>
-  {% endif %}
+  <!-- TOC -->
+  {% include "partials/toc.html" %}<!---->
 
+  <!-- Content -->
   <section>{{ page.content | safe }}</section>
 
   <hr />
 
   <!-- Post Taxonomies -->
-  {% if page.taxonomies %}
-  <footer class="mt-12 flex flex-col">
-    {% set_global term_names = [] %}<!---->
-    {% for term_name, terms in page.taxonomies %}<!---->
-    {% set_global term_names = term_names | concat(with=term_name) %}<!---->
-    {% endfor %}<!---->
-    {% for term_name in term_names | sort %}<!---->
-    <div class="mb-2 flex flex-wrap">
-      <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">{{ term_name | title }} </span>
-      {% for term in page.taxonomies[term_name] %}<!---->
-      <a
-        class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
-        href="{{ get_taxonomy_url(kind=term_name, name=term) | safe }}"
-        >{{ term }}</a
-      >
-      {% endfor %}
-    </div>
-    {% endfor %}
-  </footer>
-  {% endif %}
+  {% include "partials/post_taxonomies.html" %}<!---->
 
   <!-- Post Nav -->
-  {% if not config.extra.disable_post_navigation %}<!---->
-  {% if page.lower or page.higher %}
-  <nav class="block-bg mt-12 flex rounded-lg text-lg">
-    {% if page.higher %}
-    <a
-      class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
-      href="{{ page.higher.permalink }}"
-      ><span class="mr-1.5">←</span><span>{{ page.higher.title }}</span></a
-    >
-    {% endif %}<!---->
-    {% if page.lower %}
-    <a
-      class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
-      href="{{ page.lower.permalink }}"
-      ><span>{{ page.lower.title }}</span><span class="ml-1.5">→</span></a
-    >
-    {% endif %}
-  </nav>
-  {% endif %}<!---->
-  {% endif %}
+  {% include "partials/post_navigation.html" %}<!---->
 
-  <!-- giscus comment -->
+  <!-- Comment -->
   {% if page.extra.comment | default(value=config.extra.comment) %}<!---->
-  {% if config.extra.giscus.repo %}
-  <div class="giscus mt-12"></div>
-  <script
-    src="https://giscus.app/client.js"
-    data-repo="{{ config.extra.giscus.repo }}"
-    data-repo-id="{{ config.extra.giscus.repo_id }}"
-    data-category="{{ config.extra.giscus.category }}"
-    data-category-id="{{ config.extra.giscus.category_id }}"
-    data-mapping="{{ config.extra.giscus.mapping | default(value=`pathname`) }}"
-    data-strict="{{ config.extra.giscus.strict | default(value=`1`) }}"
-    data-reactions-enabled="{{ config.extra.giscus.reactions_enabled | default(value=`0`) }}"
-    data-emit-metadata="{{ config.extra.giscus.emit_metadata | default(value=`0`) }}"
-    data-input-position="{{ config.extra.giscus.input_position | default(value=`top`) }}"
-    data-theme="{{ config.extra.giscus.theme | default(value=`light`) }}"
-    data-lang="{{ config.extra.giscus.lang | default(value=`en`) }}"
-    data-loading="{{ config.extra.giscus.loading | default(value=`lazy`) }}"
-    crossorigin="anonymous"
-    async
-  ></script>
-  {% endif %}<!---->
+  {% include "partials/comment.html" %}<!---->
   {% endif %}
 </article>
 {% endblock main %}
