@@ -156,3 +156,15 @@ The `example` admonition.
 {% admonition(type="quote", title="quote") %}
 The `quote` admonition.
 {% end %}
+
+## Gallery
+
+The `admonition()` shortcode is very simple html-only clickable picture gallery that displays all images from the page assets.
+
+It's from [Zola documentation](https://www.getzola.org/documentation/content/image-processing/)
+
+```markdown
+{{/* gallery() */}}
+```
+
+{{ gallery() }}
