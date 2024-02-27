@@ -455,7 +455,11 @@ body {
   background: var(--bg-dark);
 }
 
-*, ::before, ::after {
+*,
+  ::before,
+  ::after {
+  /* Auto direction for text */
+  unicode-bidi: plaintext;
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;

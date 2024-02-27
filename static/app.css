@@ -23,6 +23,13 @@
   .dark body {
     background: var(--bg-dark);
   }
+
+  *,
+  ::before,
+  ::after {
+    /* Auto direction for text */
+    unicode-bidi: plaintext;
+  }
 }
 
 @layer utilities {
