@@ -34,7 +34,13 @@
 
       // dark theme
       const setDark = (isDark) => {
-        htmlClass[isDark ? "add" : "remove"]("dark");
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
         localStorage.setItem("dark", isDark);
       };
 
