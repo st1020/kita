@@ -11,6 +11,11 @@
   <!-- Meta -->
   <meta name="theme-color" />
 
+  <!-- page cover preview -->
+  {% if page.extra.cover_image %}
+  <meta property="og:image" content="{{ get_url(path=page.extra.cover_image) }}" />
+  {% endif %}
+
   <!-- Author -->
   {% if page %}
   <meta name="description" content="{{ page.summary | default(value=page.title) | safe }}" />
