@@ -15,7 +15,7 @@
   <!-- Author -->
   {% set page_title = page.title | default(value=config.title) %}
   <!---->
-  {% set description = page.summary | default(value=page_title) %}
+  {% set description = page.description | default(value=page_title) %}
   <meta name="description" content="{{ description }}" />
   <meta name="author" content="{{ page.extra.author | default(value=page_title) }}" />
   <!-- The Open Graph protocol -->
