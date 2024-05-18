@@ -50,6 +50,8 @@ math = false
 mermaid = false
 # Enable comment support globally.
 comment = false
+# The URL of social image.
+social_image = "icons/github.svg"
 
 [extra.style]
 # The custom background color.

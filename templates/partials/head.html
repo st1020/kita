@@ -11,13 +11,40 @@
   <!-- Meta -->
   <meta name="theme-color" />
 
-  <!-- Author -->
   {% if page %}
-  <meta name="description" content="{{ page.summary | default(value=page.title) | safe }}" />
-  <meta name="author" content="{{ page.extra.author | default(value=page.title) }}" />
+  <!-- Author -->
+  {% set page_title = page.title | default(value=config.title) %}
+  <!---->
+  {% set description = page.summary | default(value=page_title) %}
+  <meta name="description" content="{{ description }}" />
+  <meta name="author" content="{{ page.extra.author | default(value=page_title) }}" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ page_title }}" />
+  <meta property="og:site_name" content="{{ config.title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ page.permalink }}" />
+  {% set image = page.extra.cover_image | default(value=config.extra.social_image) %}
+  <!---->
+  {% if image %}
+  <meta property="og:image" content="{{ get_url(path=image) }}" />
+  {% endif %}
+  <!---->
   {% else %}
-  <meta name="description" content="{{ config.description | default(value=`A personal blog`) }}" />
+  <!-- Author -->
+  {% set description = config.description | default(value="A personal blog") %}
+  <!---->
+  <meta name="description" content="{{ description }}" />
   <meta name="author" content="{{ config.author | default(value=config.title) }}" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ config.title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ get_url(path=``) }}" />
+  {% if config.extra.social_image %}
+  <meta property="og:image" content="{{ get_url(path=config.extra.social_image) }}" />
+  {% endif %}
+  <!---->
   {% endif %}
 
   <!-- CSS & JS -->
