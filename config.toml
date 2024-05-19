@@ -79,6 +79,7 @@ avatar_url = "icons/github.svg"
 avatar_invert = true
 
 # The social icons below the profile on the home page.
+# The `name` should be the file name of static/icons/*.svg or the icon name of https://simpleicons.org/
 [[extra.profile.social]]
 name = "github"
 url = "https://github.com/st1020/kita"

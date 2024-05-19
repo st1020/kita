@@ -1,3 +1,4 @@
+{% import "macros.html" as macros %}
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,7 +69,7 @@
   {% if config.extra.profile.social %}
   <!---->
   {% for social in config.extra.profile.social %}
-  <link rel="preload" as="image" href="{{ get_url(path=`icons/` ~ social.name ~ `.svg`) }}" />
+  <link rel="preload" as="image" href="{{ macros::get_social_icon(icon=social.name) }}" />
   {% endfor %}
   <!---->
   {% endif %}
