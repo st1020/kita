@@ -53,6 +53,8 @@ comment = false
 # The URL of social image.
 social_image = "icons/github.svg"
 
+simpleanalytics = true  # simpleanalytics.com support
+
 [extra.style]
 # The custom background color.
 # bg_color = ""
