@@ -53,6 +53,8 @@ comment = false
 # The URL of social image.
 social_image = "icons/github.svg"
 
+simpleanalytics = true  # simpleanalytics.com support
+
 [extra.style]
 # The custom background color.
 # bg_color = ""
@@ -114,6 +116,7 @@ url = "$BASE_URL/about"
 since = 2020
 license = "CC BY-SA 4.0"
 license_url = "https://creativecommons.org/licenses/by-sa/4.0/deed"
+# disclaimer = "This site respects your privacy."
 
 # The giscus comment options, only available when comment is enabled.
 [extra.giscus]
