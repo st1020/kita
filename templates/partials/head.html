@@ -102,14 +102,15 @@
   <!-- Feeds -->
   {% if config.generate_feed %}
   <!---->
-  {% if config.feed_filename == "atom.xml" %}
+  {% if "atom.xml" in config.feed_filenames %}
   <link
     rel="alternate"
     type="application/atom+xml"
     title="Atom"
     href="{{ get_url(path=`atom.xml`) }}"
   />
-  {% elif config.feed_filename == "rss.xml" %}
+  {% endif %}
+  {% if "rss.xml" in config.feed_filenames %}
   <link
     rel="alternate"
     type="application/rss+xml"
