@@ -1,7 +1,9 @@
 <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
   <div class="mr-auto basis-full lg:basis-1/2">
-    &copy; {% if config.extra.footer.since %}{{ config.extra.footer.since }} - {% endif %} {{ now()
-    | date(format="%Y") }}
+    {% set current_year = now() | date(format="%Y") | int %}
+    &copy; {% if config.extra.footer.since and config.extra.footer.since != current_year %}
+    {{ config.extra.footer.since }} - {{ current_year }}
+    {% else %}{{ current_year }}{% endif %}
     <a class="link" href="{{ get_url(path=``) }}"
       >{{ config.author | default(value=config.title) }}</a
     >
