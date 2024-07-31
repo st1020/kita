@@ -17,8 +17,19 @@
   {% set page_title = page.title | default(value=config.title) %}
   <!---->
   {% set description = page.description | default(value=page_title) %}
+  <!---->
+  {% if page.authors | length > 0 %}
+  <!---->
+  {% set author = page.authors | join(sep=", ") %}
+  <!---->
+  {% else %}
+  <!---->
+  {% set author = config.author | default(value=config.title) %}
+  <!---->
+  {% endif %}
+  <!---->
   <meta name="description" content="{{ description }}" />
-  <meta name="author" content="{{ page.extra.author | default(value=page_title) }}" />
+  <meta name="author" content="{{ author }}" />
   <!-- The Open Graph protocol -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{ page_title }}" />
@@ -109,8 +120,7 @@
     title="Atom"
     href="{{ get_url(path=`atom.xml`) }}"
   />
-  {% endif %}
-  {% if "rss.xml" in config.feed_filenames %}
+  {% endif %} {% if "rss.xml" in config.feed_filenames %}
   <link
     rel="alternate"
     type="application/rss+xml"
