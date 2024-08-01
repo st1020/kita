@@ -1912,6 +1912,10 @@ article {
   border-radius: 0.5rem;
 }
 
+.prose-img\:rounded-lg :is(:where(img):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  border-radius: 0.5rem;
+}
+
 .dark\:bg-white\/80:is(.dark *) {
   background-color: rgb(255 255 255 / 0.8);
 }

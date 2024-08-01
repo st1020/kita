@@ -5,7 +5,7 @@ description = "Sample article showcasing basic Markdown syntax and formatting fo
 [taxonomies]
 tags = ["markdown", "css", "html"]
 [extra]
-cover_image = "images/markdown-content.png"
+cover_image = "images/markdown-syntax.png"
 +++
 
 This article offers a sample of basic Markdown syntax that can be used in Zola content files, also it shows whether basic HTML elements are decorated with CSS in a Kita theme.
@@ -49,6 +49,20 @@ The blockquote element represents content that is quoted from another source, op
 > — <cite>Rob Pike[^1]</cite>
 
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+
+## Links
+
+To create a link, enclose the link text in brackets and then follow it immediately with the URL in parentheses.
+
+[GitHub](https://github.com)
+
+To quickly turn a URL or email address into a link, enclose it in angle brackets.
+
+<https://github.com>
+
+## Images
+
+![Markdown Guide](/images/markdown-syntax.png)
 
 ## Tables
 
