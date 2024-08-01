@@ -30,6 +30,27 @@
     /* Auto direction for text */
     unicode-bidi: plaintext;
   }
+
+  /* Code block */
+  pre mark {
+    @apply block text-inherit;
+  }
+
+  pre table {
+    @apply !m-0 !w-full border-collapse;
+  }
+
+  pre table tr {
+    @apply !border-0 !border-none;
+  }
+
+  pre table td {
+    @apply !p-0;
+  }
+
+  pre table td:nth-of-type(1) {
+    @apply min-w-4 select-none;
+  }
 }
 
 @layer utilities {
