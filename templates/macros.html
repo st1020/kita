@@ -1,7 +1,8 @@
 {%- macro get_social_icon(icon) -%}
-{%- set meta = get_image_metadata(path="/static/icons/" ~ icon ~ ".svg", allow_missing=true) -%}
+{%- set path = "icons/" ~ icon ~ ".svg" -%}
+{%- set meta = get_image_metadata(path=path, allow_missing=true) -%}
 {%- if meta -%}
-{{- get_url(path="icons/" ~ icon ~ ".svg") -}}
+{{- get_url(path=path) -}}
 {%- else -%}
 {{- "https://cdn.jsdelivr.net/npm/simple-icons/icons/" ~ icon ~ ".svg" -}}
 {%- endif -%}
