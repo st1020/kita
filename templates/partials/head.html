@@ -36,7 +36,15 @@
   <meta property="og:site_name" content="{{ config.title }}" />
   <meta property="og:description" content="{{ description }}" />
   <meta property="og:url" content="{{ page.permalink }}" />
-  {% set image = page.extra.cover_image | default(value=config.extra.social_image) %}
+  {% if page.extra.cover_image %}
+  <!---->
+  {% set image = page.extra.cover_image %}
+  <!---->
+  {% elif config.extra.social_image %}
+  <!---->
+  {% set image = config.extra.social_image %}
+  <!---->
+  {% endif %}
   <!---->
   {% if image %}
   <meta property="og:image" content="{{ get_url(path=image) }}" />
