@@ -168,3 +168,13 @@ It's from [Zola documentation](https://www.getzola.org/documentation/content/ima
 ```
 
 {{ gallery() }}
+
+## YouTube
+
+Embedding YouTube videos is easy!
+
+```markdown
+{{/* youtube(id="dQw4w9WgXcQ") */}}
+```
+
+{{ youtube(id="dQw4w9WgXcQ") }}
