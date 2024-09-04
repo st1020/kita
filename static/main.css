@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.7 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -911,7 +911,6 @@ pre table td:nth-of-type(1) {
 .prose :where(table):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   width: 100%;
   table-layout: auto;
-  text-align: start;
   margin-top: 2em;
   margin-bottom: 2em;
   font-size: 0.875em;
@@ -952,6 +951,10 @@ pre table td:nth-of-type(1) {
 
 .prose :where(tfoot td):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   vertical-align: top;
+}
+
+.prose :where(th, td):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  text-align: start;
 }
 
 .prose :where(figure > *):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
@@ -1342,10 +1345,6 @@ pre table td:nth-of-type(1) {
   min-height: calc(100% - 9rem);
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-16 {
   width: 4rem;
 }
@@ -1366,6 +1365,10 @@ pre table td:nth-of-type(1) {
   width: 100%;
 }
 
+.min-w-\[50\%\] {
+  min-width: 50%;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -1376,6 +1379,10 @@ pre table td:nth-of-type(1) {
 
 .shrink-0 {
   flex-shrink: 0;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .basis-full {
