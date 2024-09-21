@@ -68,8 +68,7 @@
   {% endif %}
 
   <!-- Analytics -->
-  {% block analytics %}
-  {% endblock analytics %}
+  {% include "partials/head_analytics.html" ignore missing %}
 
   <!-- CSS & JS -->
   <link rel="preload stylesheet" as="style" href="{{ get_url(path=`main.css`) }}" />
