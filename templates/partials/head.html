@@ -67,6 +67,10 @@
   <!---->
   {% endif %}
 
+  <!-- Analytics -->
+  {% block analytics %}
+  {% endblock analytics %}
+
   <!-- CSS & JS -->
   <link rel="preload stylesheet" as="style" href="{{ get_url(path=`main.css`) }}" />
   <style>
