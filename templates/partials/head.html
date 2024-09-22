@@ -36,9 +36,9 @@
   <meta property="og:site_name" content="{{ config.title }}" />
   <meta property="og:description" content="{{ description }}" />
   <meta property="og:url" content="{{ page.permalink }}" />
-  {% if page.extra.cover_image %}
+  {% if page.extra.cover.image %}
   <!---->
-  {% set image = page.extra.cover_image %}
+  {% set image = page.extra.cover.image %}
   <!---->
   {% elif config.extra.social_image %}
   <!---->
