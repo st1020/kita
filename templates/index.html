@@ -5,6 +5,9 @@
   <body class="text-black duration-200 ease-out dark:text-white">
     {% include "partials/header.html" %}
 
+    <!-- Body Start inject -->
+    {% include "injects/body_start.html" ignore missing %}
+
     <main
       class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg"
     >
@@ -21,7 +24,7 @@
 
     {% include "partials/footer.html" %}
 
-    <!-- Body features -->
-    {% include "partials/footer_features.html" ignore missing %}
+    <!-- Body End inject -->
+    {% include "injects/body_end.html" ignore missing %}
   </body>
 </html>
