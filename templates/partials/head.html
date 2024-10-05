@@ -141,4 +141,7 @@
 
   <!-- Canonical -->
   <link rel="canonical" href="{{ page.permalink | default(value=get_url(path=``)) }}" />
+
+  <!-- Head inject -->
+  {% include "injects/head.html" ignore missing %}
 </head>
