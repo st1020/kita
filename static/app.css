@@ -51,6 +51,22 @@
   pre table td:nth-of-type(1) {
     @apply min-w-4 select-none;
   }
+
+  .prose .footnote-definition {
+    @apply flex;
+  }
+
+  .prose .footnote-definition p {
+    @apply m-0;
+  }
+
+  .prose .footnote-definition .footnote-definition-label {
+    @apply static mr-2 text-base;
+  }
+
+  .prose .footnote-definition .footnote-definition-label::after {
+    content: ".";
+  }
 }
 
 @layer utilities {
