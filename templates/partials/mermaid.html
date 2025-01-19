@@ -1,5 +1,5 @@
 <script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
 
   const initMermaid = (isDark) => {
     mermaid.initialize({
@@ -23,7 +23,7 @@
         element.innerHTML = mermaidCode;
       }
     });
-    initMermaid(e.detail == "dark");
+    initMermaid(e.detail === "dark");
   });
 
   // The es module script will load defer, so the localStorage should already be set by script in header.
