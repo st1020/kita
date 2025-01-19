@@ -34,6 +34,8 @@
   /* Code block */
   pre mark {
     @apply block text-inherit;
+    margin: 0 -18px;
+    padding: 0 18px;
   }
 
   pre table {
