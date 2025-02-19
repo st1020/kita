@@ -1,5 +1,5 @@
 # The base URL of the site; the only required configuration variable.
-base_url = "https://st1020.github.io/kita"
+base_url = "https://kita-zola.pages.dev"
 
 # The site title and description; used in feeds by default.
 title = "Kita"
