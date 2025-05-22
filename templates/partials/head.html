@@ -78,14 +78,16 @@
     }
   </style>
 
-  {% if section.path is defined and section.path == "/" %}
+  {% if section.path is defined and section.path == "/" and (paginator is undefined or
+  paginator.current_index == 1) %}
   <!-- Avatar -->
   {% if config.extra.profile.avatar_url %}
   <link rel="preload" as="image" href="{{ get_url(path=config.extra.profile.avatar_url) }}" />
   {% endif %}
 
   <!-- Social List -->
-  {% if config.extra.profile.social %}
+  {% if config.extra.profile.social and section.path == "/" and (paginator is undefined or
+  paginator.current_index == 1) %}
   <!---->
   {% for social in config.extra.profile.social %}
   <link rel="preload" as="image" href="{{ macros::get_social_icon(icon=social.name) }}" />
