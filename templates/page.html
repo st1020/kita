@@ -5,12 +5,12 @@
   {% include "injects/page_start.html" ignore missing %}
 
   <header class="mb-16">
-    <h1 class="!my-0 pb-2.5">{{ page.title }}</h1>
+    <h1 class="my-0! pb-2.5">{{ page.title }}</h1>
     {% include "partials/page_info.html" %}
   </header>
 
   {% if page.extra.cover.image %}<!---->
-  <figure class="mb-12 mt-0">
+  <figure class="mt-0 mb-12">
     <img
       class="h-auto w-full rounded-lg"
       src="{{ get_url(path=page.extra.cover.image) }}"

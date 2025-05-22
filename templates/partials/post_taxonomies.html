@@ -6,10 +6,10 @@
   {% endfor %}<!---->
   {% for term_name in term_names | sort %}
   <div class="mb-2 flex flex-wrap">
-    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">{{ term_name | title }} </span>
+    <span class="block-bg mr-1.5 mb-1.5 rounded-lg px-5 py-1.5">{{ term_name | title }} </span>
     {% for term in page.taxonomies[term_name] %}
     <a
-      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
       href="{{ get_taxonomy_url(kind=term_name, name=term) | safe }}"
       >{{ term }}</a
     >

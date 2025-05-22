@@ -1,139 +1,149 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
 
-@layer base {
-  html,
-  body {
-    @apply h-full;
-  }
+html,
+body {
+  @apply h-full;
+}
 
-  html {
-    --bg: transparent;
-    --bg-dark: transparent;
-    --header: transparent;
-    --header-dark: transparent;
-  }
+html {
+  --bg: transparent;
+  --bg-dark: transparent;
+  --header: transparent;
+  --header-dark: transparent;
+}
 
-  body {
-    -webkit-tap-highlight-color: transparent;
-    background: var(--bg);
-  }
+body {
+  -webkit-tap-highlight-color: transparent;
+  background: var(--bg);
 
-  .dark body {
+  &:where(.dark *) {
     background: var(--bg-dark);
-  }
-
-  *,
-  ::before,
-  ::after {
-    /* Auto direction for text */
-    unicode-bidi: plaintext;
-  }
-
-  /* Code block */
-  pre mark {
-    @apply block text-inherit;
-    margin: 0 -18px;
-    padding: 0 18px;
-  }
-
-  pre table {
-    @apply !m-0 !w-full border-collapse;
-  }
-
-  pre table tr {
-    @apply !border-0 !border-none;
-  }
-
-  pre table td {
-    @apply !p-0;
-  }
-
-  pre table td:nth-of-type(1) {
-    @apply min-w-4 select-none;
-  }
-
-  .prose .footnote-definition {
-    @apply flex;
-  }
-
-  .prose .footnote-definition p {
-    @apply m-0;
-  }
-
-  .prose .footnote-definition .footnote-definition-label {
-    @apply static mr-2 text-base;
-  }
-
-  .prose .footnote-definition .footnote-definition-label::after {
-    content: ".";
   }
 }
 
-@layer utilities {
-  .not-ready * {
-    @apply !transition-none;
+.not-ready * {
+  @apply transition-none!;
+}
+
+article {
+  @apply text-lg;
+
+  /* Auto direction for text */
+  *,
+  ::before,
+  ::after {
+    unicode-bidi: plaintext;
   }
 
-  .btn-menu::before,
-  .btn-menu::after {
-    @apply block h-[2px] w-5 bg-black duration-200 content-[''] dark:invert;
-  }
-
-  .open {
-    @apply overflow-hidden;
-  }
-
-  .open .btn-menu::before {
-    @apply w-6 translate-y-[5.5px] rotate-45;
-  }
-
-  .open .btn-menu::after {
-    @apply w-6 -translate-y-[5.5px] -rotate-45;
-  }
-
-  .nav-wrapper {
-    @apply hidden lg:flex;
-  }
-
-  .open .nav-wrapper {
+  /* Footnote */
+  .footnote-definition {
     @apply flex;
+
+    p {
+      @apply m-0;
+    }
+
+    .footnote-definition-label {
+      @apply static mr-2 text-base;
+
+      &::after {
+        @apply content-['.'];
+      }
+    }
   }
 
-  article {
-    @apply text-lg;
-  }
+  /* Code block */
+  pre {
+    @apply text-base;
 
-  .header {
-    background-color: var(--header);
-  }
+    mark {
+      @apply mx-[-18px] my-0 block px-[18px] py-0 text-inherit;
+    }
 
-  .dark .header {
+    table {
+      @apply m-0 w-full border-collapse text-base;
+
+      tr {
+        @apply border-0 border-none;
+      }
+
+      td {
+        @apply p-0;
+
+        &:nth-of-type(1) {
+          @apply min-w-4 select-none;
+          mark {
+            @apply mr-0 pr-0;
+          }
+        }
+
+        &:not(:nth-of-type(1)) {
+          mark {
+            @apply ml-0 pl-0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header {
+  background-color: var(--header);
+
+  &:where(.dark *) {
     background: var(--header-dark);
   }
+}
 
-  .blur-header {
-    @apply bg-black/10 backdrop-blur dark:bg-white/10;
+.btn-menu {
+  &::before,
+  &::after {
+    @apply block h-[2px] w-5 bg-black duration-200 content-[''];
   }
 
-  .block-bg {
-    @apply bg-black/[3%] dark:bg-white/[8%];
-  }
+  @apply dark:before:invert dark:after:invert;
 
-  .block-hover {
-    @apply hover:bg-black/[5%] dark:hover:bg-white/[11%];
-  }
+  &:where(.open *) {
+    &::before {
+      @apply w-6 translate-y-[5.5px] rotate-45;
+    }
 
-  .block-hover-mask {
-    @apply hover:bg-black/[2%] dark:hover:bg-white/[3%];
+    &::after {
+      @apply w-6 -translate-y-[5.5px] -rotate-45;
+    }
   }
+}
 
-  .primary-link {
-    @apply text-black no-underline hover:opacity-80 dark:text-white;
-  }
+.nav-wrapper {
+  @apply hidden lg:flex;
 
-  .secondary-link {
-    @apply text-[var(--tw-prose-body)] no-underline hover:text-black dark:hover:text-white;
+  &:where(.open *) {
+    @apply flex;
   }
+}
+
+@utility blur-header {
+  @apply bg-black/10 backdrop-blur dark:bg-white/10;
+}
+
+@utility block-bg {
+  @apply bg-black/[3%] dark:bg-white/[8%];
+}
+
+@utility block-hover {
+  @apply hover:bg-black/[5%] dark:hover:bg-white/[11%];
+}
+
+@utility block-hover-mask {
+  @apply hover:bg-black/[2%] dark:hover:bg-white/[3%];
+}
+
+@utility primary-link {
+  @apply text-black no-underline hover:opacity-80 dark:text-white;
+}
+
+@utility secondary-link {
+  @apply text-[var(--tw-prose-body)] no-underline hover:text-black dark:hover:text-white;
 }
