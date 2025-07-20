@@ -1,9 +1,16 @@
 {% set img = body | trim_start_matches(pat="![") | trim_end_matches(pat=")") | split(pat="](") %}<!---->
 {% set alt = img | first() %}<!---->
-{% set src = img | last() %}<!---->
-{% set ignore_names = ["inline svg", "inline-svg", "inline_svg"] %}
+{% set_global src = img | last() %}<!---->
+{% set ignore_names = ["inline svg", "inline-svg", "inline_svg"] %}<!---->
+
+{% for asset in page.assets -%}<!---->
+{% if asset is ending_with("/" ~ src) %}<!---->
+{% set_global src = asset %}<!---->
+{% endif %}<!---->
+{% endfor %}<!---->
+
 <figure class="inline-svg">
-  {{ load_data(path="@" ~ page.path ~ src) | safe}}<!---->
+  {{ load_data(path=src) | safe}}<!---->
   {% if alt and not ignore_names is containing(alt | lower) %}
   <figcaption>{{ alt }}</figcaption>
   {% endif %}
