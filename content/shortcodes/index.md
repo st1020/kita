@@ -168,3 +168,43 @@ It's from [Zola documentation](https://www.getzola.org/documentation/content/ima
 ```
 
 {{ gallery() }}
+
+## Inline SVG
+
+The `inline_svg()` shortcode is used to embed SVG images directly into a webpage, rather than including them via an `<img>` tag.
+
+You can use the `inline_svg()` shortcodes like:
+
+```markdown
+{%/* inline_svg() */%}
+![Van de Graaf canon](Van_de_Graaf_canon_in_book_design.svg)
+{%/* end */%}
+```
+
+{% inline_svg() %}
+![Van de Graaf canon](Van_de_Graaf_canon_in_book_design.svg)
+{% end %}
+
+If you don't want to display a caption below the image, you can set the Markdown image `alt` text to an empty string, `Inline SVG`, `inline-svg`, or `inline_svg`.
+
+```markdown
+{%/* inline_svg() */%}
+![](Van_de_Graaf_canon_in_book_design.svg)
+{%/* end */%}
+
+{%/* inline_svg() */%}
+![Inline SVG](Van_de_Graaf_canon_in_book_design.svg)
+{%/* end */%}
+
+{%/* inline_svg() */%}
+![inline-svg](Van_de_Graaf_canon_in_book_design.svg)
+{%/* end */%}
+
+{%/* inline_svg() */%}
+![inline_svg](Van_de_Graaf_canon_in_book_design.svg)
+{%/* end */%}
+```
+
+{% inline_svg() %}
+![](Van_de_Graaf_canon_in_book_design.svg)
+{% end %}

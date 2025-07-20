@@ -1,0 +1,10 @@
+{% set img = body | trim_start_matches(pat="![") | trim_end_matches(pat=")") | split(pat="](") %}<!---->
+{% set alt = img | first() %}<!---->
+{% set src = img | last() %}<!---->
+{% set ignore_names = ["inline svg", "inline-svg", "inline_svg"] %}
+<figure class="inline-svg">
+  {{ load_data(path="@" ~ page.path ~ src) | safe}}<!---->
+  {% if alt and not ignore_names is containing(alt | lower) %}
+  <figcaption>{{ alt }}</figcaption>
+  {% endif %}
+</figure>

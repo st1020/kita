@@ -87,6 +87,15 @@ article {
       }
     }
   }
+
+  /* Figure */
+  figure {
+    @apply max-w-full;
+
+    svg {
+      @apply h-auto max-w-full scheme-light! dark:scheme-dark!;
+    }
+  }
 }
 
 .header {
