@@ -42,7 +42,7 @@ extra_syntaxes_and_themes = []
 # See below for list of allowed values.
 highlight_theme = "base16-ocean-dark"
 
-# The Kita theme style config.
+# The Kita theme config.
 [extra]
 # Enable KaTex math formula support globally.
 math = false
@@ -50,9 +50,12 @@ math = false
 mermaid = false
 # Enable comment support globally.
 comment = false
+# Enable floating table of contents on the right side of the post page.
+side_toc = true
 # The URL of social image.
 social_image = "icons/github.svg"
 
+# The Kita style config.
 [extra.style]
 # The custom background color.
 # bg_color = ""

@@ -8,19 +8,27 @@
     <!-- Body Start inject -->
     {% include "injects/body_start.html" ignore missing %}
 
-    <main
-      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
-    >
-      {% block main %}
+    <div class="flex">
+      <div class="order-1 hidden w-[calc((100%-var(--container-3xl))/2)] lg:block"></div>
+      <aside
+        class="sticky top-0 order-3 mt-48 hidden h-min w-[calc((100%-var(--container-3xl))/2)] lg:block"
+      >
+        {% include "partials/side_toc.html" %}
+      </aside>
+      <main
+        class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg order-2 mx-auto min-h-[calc(100vh-9rem)] w-full max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
+      >
+        {% block main %}
 
-      <!-- Profile -->
-      {% if paginator is undefined or paginator.current_index == 1 %}<!---->
-      {% include "partials/profile.html" %}<!---->
-      {% endif %}<!---->
+        <!-- Profile -->
+        {% if paginator is undefined or paginator.current_index == 1 %}<!---->
+        {% include "partials/profile.html" %}<!---->
+        {% endif %}<!---->
 
-      {% include "partials/page_list.html" %}<!---->
-      {% endblock main %}
-    </main>
+        {% include "partials/page_list.html" %}<!---->
+        {% endblock main %}
+      </main>
+    </div>
 
     {% include "partials/footer.html" %}
 

@@ -19,7 +19,7 @@ This theme is based on Hugo theme [hugo-paper](https://github.com/nanxiaobei/hug
 - Taxonomies support
 - Projects page
 - Archive page
-- Table of Content
+- Table of content & Floating side table of content
 - Admonition shortcode
 - SEO friendly
 - Comments using [Giscus](https://giscus.app/)
