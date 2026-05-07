@@ -32,15 +32,35 @@ taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
 
 # Configuration of the Markdown rendering
 [markdown]
-# When set to "true", all code blocks are highlighted.
-highlight_code = true
+# When set to "true", support for GitHub-style alerts, a.k.a. callouts or admonitions, is enabled in the Markdown parser.
+# For example, this Markdown syntax:
+#
+#     > [!NOTE]
+#     > alert note
+#
+# will result in the following generated HTML:
+#
+#     <blockquote class="markdown-alert-note">
+#     <p>alert note</p>
+#     </blockquote>
+#
+# where the CSS class name suffix may be `note`, `tip`, `important`, `warning`, or `caution`, depending on the alert type.
+# Visual appearance depends on theme-level support; refer to your theme's documentation for more information.
+github_alerts = true
 
-# A list of directories used to search for additional `.sublime-syntax` and `.tmTheme` files.
-extra_syntaxes_and_themes = []
+# Syntax highlighting configuration (optional)
+[markdown.highlighting]
+# Whether to use inline hex colours (`inline`) or CSS classes (`class`) 
+style = "inline"
 
-# The theme to use for code highlighting.
-# See below for list of allowed values.
-highlight_theme = "base16-ocean-dark"
+# Selecting a theme is always required: you have a choice between single (1) or dual themes (2).
+# Only outputting CSS classes like before 0.22 is not possible anymore.
+# 1. If you use a single theme, put its name here. See the syntax highlighting page for the possible choices.
+theme = "dark-plus"
+
+# 2. If you want light/dark themes, use the 2 fields below instead. See the syntax highlighting page for the possible choices.
+# light_theme = "light-plus"
+# dark_theme = "dark-plus"
 
 # The Kita theme config.
 [extra]

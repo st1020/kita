@@ -1449,9 +1449,9 @@ html {
 }
 body {
   -webkit-tap-highlight-color: transparent;
-  background: var(--bg);
-  &:where(.dark *) {
-    background: var(--bg-dark);
+  background-color: var(--bg);
+  &:where(.dark, .dark *) {
+    background-color: var(--bg-dark);
   }
 }
 .not-ready * {
@@ -1482,44 +1482,18 @@ article {
   pre {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
-    mark {
-      margin-inline: -18px;
-      margin-block: calc(var(--spacing) * 0);
-      display: block;
-      padding-inline: 18px;
-      padding-block: calc(var(--spacing) * 0);
-      color: inherit;
-    }
-    table {
-      margin: calc(var(--spacing) * 0);
+    .giallo-l {
+      display: inline-block;
+      min-height: 1lh;
       width: 100%;
-      border-collapse: collapse;
-      font-size: var(--text-base);
-      line-height: var(--tw-leading, var(--text-base--line-height));
-      tr {
-        border-style: var(--tw-border-style);
-        border-width: 0px;
-        --tw-border-style: none;
-        border-style: none;
-      }
-      td {
-        padding: calc(var(--spacing) * 0);
-        &:nth-of-type(1) {
-          min-width: calc(var(--spacing) * 4);
-          -webkit-user-select: none;
-          user-select: none;
-          mark {
-            margin-right: calc(var(--spacing) * 0);
-            padding-right: calc(var(--spacing) * 0);
-          }
-        }
-        &:not(:nth-of-type(1)) {
-          mark {
-            margin-left: calc(var(--spacing) * 0);
-            padding-left: calc(var(--spacing) * 0);
-          }
-        }
-      }
+    }
+    .giallo-ln {
+      margin-right: calc(var(--spacing) * 4);
+      display: inline-block;
+      text-align: right;
+      opacity: 80%;
+      -webkit-user-select: none;
+      user-select: none;
     }
   }
   figure {
@@ -1536,14 +1510,14 @@ article {
 }
 .header {
   background-color: var(--header);
-  &:where(.dark *) {
-    background: var(--header-dark);
+  &:where(.dark, .dark *) {
+    background-color: var(--header-dark);
   }
 }
 .btn-menu {
   &::before, &::after {
     display: block;
-    height: 2px;
+    height: calc(var(--spacing) * 0.5);
     width: calc(var(--spacing) * 5);
     background-color: var(--color-black);
     --tw-duration: 200ms;
@@ -1574,7 +1548,7 @@ article {
     }
     &::after {
       width: calc(var(--spacing) * 6);
-      --tw-translate-y: calc(5.5px * -1);
+      --tw-translate-y: -5.5px;
       translate: var(--tw-translate-x) var(--tw-translate-y);
       rotate: calc(45deg * -1);
     }

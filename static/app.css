@@ -16,11 +16,7 @@ html {
 
 body {
   -webkit-tap-highlight-color: transparent;
-  background: var(--bg);
-
-  &:where(.dark *) {
-    background: var(--bg-dark);
-  }
+  @apply bg-(--bg) dark:bg-(--bg-dark);
 }
 
 .not-ready * {
@@ -58,33 +54,12 @@ article {
   pre {
     @apply text-base;
 
-    mark {
-      @apply mx-[-18px] my-0 block px-[18px] py-0 text-inherit;
+    .giallo-l {
+      @apply inline-block min-h-lh w-full;
     }
 
-    table {
-      @apply m-0 w-full border-collapse text-base;
-
-      tr {
-        @apply border-0 border-none;
-      }
-
-      td {
-        @apply p-0;
-
-        &:nth-of-type(1) {
-          @apply min-w-4 select-none;
-          mark {
-            @apply mr-0 pr-0;
-          }
-        }
-
-        &:not(:nth-of-type(1)) {
-          mark {
-            @apply ml-0 pl-0;
-          }
-        }
-      }
+    .giallo-ln {
+      @apply mr-4 inline-block text-right opacity-80 select-none;
     }
   }
 
@@ -99,17 +74,13 @@ article {
 }
 
 .header {
-  background-color: var(--header);
-
-  &:where(.dark *) {
-    background: var(--header-dark);
-  }
+  @apply bg-(--header) dark:bg-(--header-dark);
 }
 
 .btn-menu {
   &::before,
   &::after {
-    @apply block h-[2px] w-5 bg-black duration-200 content-[''];
+    @apply block h-0.5 w-5 bg-black duration-200 content-[''];
   }
 
   @apply dark:before:invert dark:after:invert;
@@ -120,7 +91,7 @@ article {
     }
 
     &::after {
-      @apply w-6 -translate-y-[5.5px] -rotate-45;
+      @apply w-6 translate-y-[-5.5px] -rotate-45;
     }
   }
 }
@@ -138,15 +109,15 @@ article {
 }
 
 @utility block-bg {
-  @apply bg-black/[3%] dark:bg-white/[8%];
+  @apply bg-black/3 dark:bg-white/8;
 }
 
 @utility block-hover {
-  @apply hover:bg-black/[5%] dark:hover:bg-white/[11%];
+  @apply hover:bg-black/5 dark:hover:bg-white/11;
 }
 
 @utility block-hover-mask {
-  @apply hover:bg-black/[2%] dark:hover:bg-white/[3%];
+  @apply hover:bg-black/2 dark:hover:bg-white/3;
 }
 
 @utility primary-link {
@@ -154,5 +125,5 @@ article {
 }
 
 @utility secondary-link {
-  @apply text-[var(--tw-prose-body)] no-underline hover:text-black dark:hover:text-white;
+  @apply text-(--tw-prose-body) no-underline hover:text-black dark:hover:text-white;
 }
