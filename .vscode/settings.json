@@ -4,7 +4,7 @@
     "*.css": "tailwindcss"
   },
   "[jinja-html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   },
   "tailwindCSS.includeLanguages": {
     "jinja-html": "html"

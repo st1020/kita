@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -1283,7 +1283,7 @@
   }
   .lg\:basis-1\/2 {
     @media (width >= 64rem) {
-      flex-basis: calc(1/2 * 100%);
+      flex-basis: calc(1 / 2 * 100%);
     }
   }
   .lg\:flex-row {

@@ -1,0 +1,5 @@
+{
+  "printWidth": 100,
+  "sortTailwindcss": true,
+  "ignorePatterns": ["templates/macros.html", "static/main.css"]
+}

@@ -1,7 +1,3 @@
 {
-  "recommendations": [
-    "samuelcolvin.jinjahtml",
-    "esbenp.prettier-vscode",
-    "bradlc.vscode-tailwindcss"
-  ]
+  "recommendations": ["samuelcolvin.jinjahtml", "oxc.oxc-vscode", "bradlc.vscode-tailwindcss"]
 }
