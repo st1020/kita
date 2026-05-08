@@ -761,8 +761,8 @@
   .max-h-lvh {
     max-height: 100lvh;
   }
-  .min-h-\[3\.5rem\] {
-    min-height: 3.5rem;
+  .min-h-14 {
+    min-height: calc(var(--spacing) * 14);
   }
   .min-h-\[calc\(100vh-9rem\)\] {
     min-height: calc(100vh - 9rem);
@@ -955,7 +955,7 @@
       }
     }
   }
-  .bg-\[var\(--admonition-bg\)\] {
+  .bg-\(--admonition-bg\) {
     background-color: var(--admonition-bg);
   }
   .bg-black {
@@ -1103,7 +1103,7 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
-  .break-words {
+  .wrap-break-word {
     overflow-wrap: break-word;
   }
   .primary-link {
@@ -1241,9 +1241,9 @@
       scale: var(--tw-scale-x) var(--tw-scale-y);
     }
   }
-  .md\:min-h-\[18rem\] {
+  .md\:min-h-72 {
     @media (width >= 48rem) {
-      min-height: 18rem;
+      min-height: calc(var(--spacing) * 72);
     }
   }
   .md\:grid-cols-2 {
@@ -1348,7 +1348,7 @@
       }
     }
   }
-  .dark\:\[background-position\:right\] {
+  .dark\:bg-right {
     &:where(.dark, .dark *) {
       background-position: right;
     }
