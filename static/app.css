@@ -71,6 +71,14 @@ article {
       @apply h-auto max-w-full scheme-light! dark:scheme-dark!;
     }
   }
+
+  /* Anchor */
+  .zola-anchor {
+    @apply no-underline;
+  }
+  [id] {
+    @apply scroll-mt-16;
+  }
 }
 
 .header {

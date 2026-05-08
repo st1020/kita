@@ -1507,6 +1507,12 @@ article {
       }
     }
   }
+  .zola-anchor {
+    text-decoration-line: none;
+  }
+  [id] {
+    scroll-margin-top: calc(var(--spacing) * 16);
+  }
 }
 .header {
   background-color: var(--header);
