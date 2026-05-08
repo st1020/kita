@@ -35,12 +35,13 @@
       // dark theme
       const setDark = (isDark) => {
         if (isDark) {
-          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
           htmlClass.add("dark");
         } else {
-          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
           htmlClass.remove("dark");
         }
+        const mode = isDark ? "dark" : "light";
+        document.body.dispatchEvent(new CustomEvent("set-theme", { detail: mode }));
+        document.querySelector("#giallo")?.setAttribute("href", `/giallo-${mode}.css`);
         localStorage.setItem("dark", isDark);
       };
 
