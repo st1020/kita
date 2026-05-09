@@ -70,6 +70,10 @@ article {
     .giallo-ln {
       @apply mr-4 inline-block text-right opacity-80 select-none;
     }
+
+    .z-hl {
+      @apply bg-gray-500/15;
+    }
   }
 
   /* Figure */
