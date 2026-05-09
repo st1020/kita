@@ -99,62 +99,34 @@ sequenceDiagram
 
 The `admonition()` shortcode displays a banner to help you put notice in your page.
 
+This is another way to write a GitHub-style alert, but it supports custom titles.
+
 You can use the `admonition()` shortcode like:
 
 ```markdown
-{%/* admonition(type="tip", title="tip") */%}
-The `tip` admonition.
+{%/* admonition(type="note", title="note") */%}
+The `note` admonition.
 {%/* end */%}
 ```
 
-The admonition shortcode has 12 different types:
-
 {% admonition(type="note", title="note") %}
 The `note` admonition.
-{% end %}
-
-{% admonition(type="abstract", title="abstract") %}
-The `abstract` admonition.
-{% end %}
-
-{% admonition(type="info", title="info") %}
-The `info` admonition.
 {% end %}
 
 {% admonition(type="tip", title="tip") %}
 The `tip` admonition.
 {% end %}
 
-{% admonition(type="success", title="success") %}
-The `success` admonition.
-{% end %}
-
-{% admonition(type="question", title="question") %}
-The `question` admonition.
+{% admonition(type="important", title="important") %}
+The `important` admonition.
 {% end %}
 
 {% admonition(type="warning", title="warning") %}
 The `warning` admonition.
 {% end %}
 
-{% admonition(type="failure", title="failure") %}
-The `failure` admonition.
-{% end %}
-
-{% admonition(type="abstract", title="danger") %}
-The `danger` admonition.
-{% end %}
-
-{% admonition(type="bug", title="bug") %}
-The `bug` admonition.
-{% end %}
-
-{% admonition(type="example", title="example") %}
-The `example` admonition.
-{% end %}
-
-{% admonition(type="quote", title="quote") %}
-The `quote` admonition.
+{% admonition(type="caution", title="caution") %}
+The `caution` admonition.
 {% end %}
 
 ## Gallery
@@ -206,5 +178,5 @@ If you don't want to display a caption below the image, you can set the Markdown
 ```
 
 {% inline_svg() %}
-![](Van_de_Graaf_canon_in_book_design.svg)
+![Inline SVG](Van_de_Graaf_canon_in_book_design.svg)
 {% end %}
