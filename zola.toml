@@ -1,66 +1,26 @@
-# The base URL of the site; the only required configuration variable.
 base_url = "https://kita-zola.pages.dev"
-
-# The site title and description; used in feeds by default.
 title = "Kita"
 description = "Kita is a clean, elegant and simple blog theme for Zola."
-
-# The default site author.
 author = "st1020"
-
-# The default language; used in feeds.
 default_language = "en"
-
-# When set to "true", a feed is automatically generated.
-generate_feeds = true
-
-# The filenames to use for the feeds. Used as the template filenames, too.
-# Defaults to ["atom.xml"], which has a built-in template that renders an Atom 1.0 feed.
-# There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
-feed_filenames = ["atom.xml"]
-
-# The taxonomies to be rendered for the site and their configuration of the default languages
-# Example:
-#     taxonomies = [
-#       {name = "tags", feed = true}, # each tag will have its own feed
-#       {name = "tags"}, # you can have taxonomies with the same name in multiple languages
-#       {name = "categories", paginate_by = 5},  # 5 items per page for a term
-#       {name = "authors"}, # Basic definition: no feed or pagination
-#     ]
-#
 taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
 
-# Configuration of the Markdown rendering
-[markdown]
-# When set to "true", support for GitHub-style alerts, a.k.a. callouts or admonitions, is enabled in the Markdown parser.
-# For example, this Markdown syntax:
-#
-#     > [!NOTE]
-#     > alert note
-#
-# will result in the following generated HTML:
-#
-#     <blockquote class="markdown-alert-note">
-#     <p>alert note</p>
-#     </blockquote>
-#
-# where the CSS class name suffix may be `note`, `tip`, `important`, `warning`, or `caution`, depending on the alert type.
-# Visual appearance depends on theme-level support; refer to your theme's documentation for more information.
-github_alerts = true
 
-# Syntax highlighting configuration (optional)
+[markdown]
+github_alerts = true
+insert_anchor_links = "heading"
+
 [markdown.highlighting]
-# Whether to use inline hex colours (`inline`) or CSS classes (`class`) 
+# Kita theme supports both "inline" and "class" modes.
 style = "class"
 
-# Selecting a theme is always required: you have a choice between single (1) or dual themes (2).
-# Only outputting CSS classes like before 0.22 is not possible anymore.
-# 1. If you use a single theme, put its name here. See the syntax highlighting page for the possible choices.
+# You can use a single theme.
 # theme = "dark-plus"
 
-# 2. If you want light/dark themes, use the 2 fields below instead. See the syntax highlighting page for the possible choices.
+# If light/dark themes are set, the code highlighting theme will follow Kita theme's light/dark mode.
 light_theme = "light-plus"
 dark_theme = "dark-plus"
+
 
 # The Kita theme config.
 [extra]

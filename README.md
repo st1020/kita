@@ -11,7 +11,7 @@ This theme is based on Hugo theme [hugo-paper](https://github.com/nanxiaobei/hug
 ## Features
 
 - Easy to use and modify
-- No preset limits (This theme does not limit your content directory structure, taxonomy names, etc. It's applicable to all zola sites.)
+- No preset limits[^1]
 - Inject support
 - Dark mode
 - Responsive design
@@ -25,6 +25,8 @@ This theme is based on Hugo theme [hugo-paper](https://github.com/nanxiaobei/hug
 - Comments using [Giscus](https://giscus.app/)
 - Mathematical notations using [KaTeX](https://katex.org/)
 - Diagrams and charts using [Mermaid](https://mermaid.js.org/)
+
+[^1]: This theme does not limit your content directory structure, taxonomy names, etc. It's applicable to all zola sites.
 
 ## Installation
 

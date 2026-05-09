@@ -14,9 +14,9 @@ Kita theme support $\LaTeX$ mathematical formulas using [KaTeX](https://katex.or
 
 **Note:** Use the online reference of [Supported TeX Functions](https://katex.org/docs/supported.html).
 
-### Examples
+## Examples
 
-#### Inline math
+### Inline math
 
 ```markdown
 When $x = \pi$, Euler's formula may be rewritten as $e^{i \pi} + 1 = 0$.
@@ -24,7 +24,7 @@ When $x = \pi$, Euler's formula may be rewritten as $e^{i \pi} + 1 = 0$.
 
 When $x = \pi$, Euler's formula may be rewritten as $e^{i \pi} + 1 = 0$.
 
-#### Block math
+### Block math
 
 ```markdown
 $$
