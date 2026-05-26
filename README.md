@@ -50,7 +50,7 @@ theme = "kita"
 
 ## Configuration
 
-See the `extra` section in [zola.toml](https://github.com/st1020/kita/blob/main/zola.toml#L26) as a example.
+See the `extra` section in [zola.toml](https://github.com/st1020/kita/blob/main/zola.toml) as a example.
 
 ## Inject support
 
