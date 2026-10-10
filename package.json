@@ -13,12 +13,12 @@
     "url": "https://github.com/st1020/kita.git"
   },
   "scripts": {
-    "dev": "bun tailwindcss -i ./static/app.css -o ./static/main.css --watch",
-    "build": "bun tailwindcss -i ./static/app.css -o ./static/main.css"
+    "dev": "tailwindcss -i ./static/app.css -o ./static/main.css --watch",
+    "build": "tailwindcss -i ./static/app.css -o ./static/main.css"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.2.4",
-    "@tailwindcss/typography": "^0.5.19",
-    "tailwindcss": "^4.2.4"
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "tailwindcss": "^4.3.3"
   }
 }
