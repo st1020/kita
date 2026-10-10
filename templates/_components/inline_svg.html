@@ -1,17 +1,19 @@
-{% set img = body | trim_start_matches(pat="![") | trim_end_matches(pat=")") | split(pat="](") %}<!---->
+{% component inline_svg(@page) %}<!---->
+{% set img = body | trim | trim_start(pat="![") | trim_end(pat=")") | split(pat="](") %}<!---->
 {% set alt = img | first() %}<!---->
 {% set_global src = img | last() %}<!---->
 {% set ignore_names = ["inline svg", "inline-svg", "inline_svg"] %}<!---->
 
 {% for asset in page.assets -%}<!---->
-{% if asset is ending_with("/" ~ src) %}<!---->
+{% if asset is ending_with(pat="/" ~ src) %}<!---->
 {% set_global src = asset %}<!---->
 {% endif %}<!---->
-{% endfor %}<!---->
+{% endfor %}
 
 <figure class="inline-svg">
   {{ load_data(path=src) | safe}}<!---->
-  {% if alt and not ignore_names is containing(alt | lower) %}
+  {% if alt and (alt | lower) not in ignore_names %}
   <figcaption>{{ alt }}</figcaption>
   {% endif %}
 </figure>
+{% endcomponent inline_svg %}

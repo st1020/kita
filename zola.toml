@@ -3,7 +3,7 @@ title = "Kita"
 description = "Kita is a clean, elegant and simple blog theme for Zola."
 author = "st1020"
 default_language = "en"
-taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
+taxonomies = [{ name = "tags", feed = true, paginate_by = 5 }]
 
 
 [markdown]

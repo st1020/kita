@@ -1,3 +1,4 @@
+{% component admonition(type: string, title: string = "") %}<!---->
 {% if type == "note" %} {% set admonition_class = "markdown-alert-note" %}<!---->
 {% elif type == "tip" %} {% set admonition_class = "markdown-alert-tip" %}<!---->
 {% elif type == "important" %} {% set admonition_class = "markdown-alert-important" %}<!---->
@@ -8,7 +9,8 @@
 
 <blockquote
   class="{{ admonition_class }}"
-  style="--admonition-title: '{{ title | default(value=type | title) }}'"
+  style="--admonition-title: '{{ title or type | title }}'"
 >
   {{ body | markdown | safe }}
 </blockquote>
+{% endcomponent admonition %}

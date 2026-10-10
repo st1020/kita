@@ -1,4 +1,3 @@
-{% import "macros.html" as macros %}
 <!doctype html>
 <html class="not-ready lg:text-base" lang="{{ lang }}">
   {% include "partials/head.html" %}
@@ -6,7 +5,7 @@
     {% include "partials/header.html" %}
 
     <!-- Body Start inject -->
-    {% include "injects/body_start.html" ignore missing %}
+    {% include "injects/body_start.html" %}
 
     <div class="flex">
       <div class="order-1 hidden w-[calc((100%-var(--container-3xl))/2)] lg:block"></div>
@@ -33,6 +32,6 @@
     {% include "partials/footer.html" %}
 
     <!-- Body End inject -->
-    {% include "injects/body_end.html" ignore missing %}
+    {% include "injects/body_end.html" %}
   </body>
 </html>

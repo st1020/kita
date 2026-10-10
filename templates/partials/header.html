@@ -1,5 +1,5 @@
 <header
-  class="{% if config.extra.style.header_blur %}blur-header{% else %}header{% endif %} fixed top-0 z-40 mx-auto min-h-14 w-full"
+  class="{% if config.extra.style?.header_blur %}blur-header{% else %}header{% endif %} fixed top-0 z-40 mx-auto min-h-14 w-full"
 >
   <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
     <div class="flex justify-between">
@@ -81,7 +81,7 @@
         {% endfor %}
       </ul>
       <!-- Header Nav inject -->
-      {% include "injects/header_nav.html" ignore missing %}
+      {% include "injects/header_nav.html" %}
     </nav>
     {% endif %}
   </div>

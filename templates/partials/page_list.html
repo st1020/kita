@@ -12,15 +12,15 @@
 <section
   class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
 >
-  {% if page.extra.cover.image %}
+  {% if page.extra.cover?.image %}
   <figure class="mt-0 mb-4">
     <img
       class="h-auto w-full rounded-lg"
-      src="{{ get_url(path=page.extra.cover.image) }}"
+      src="{{ get_url(path=page.extra.cover?.image) }}"
       alt="{{ page.extra.cover.alt | default(value='cover') }}"
     />
   </figure>
-  {% endif %}<!---->
+  {% endif %}
 
   <h2 class="my-0! pb-1 leading-none! font-bold">{{ page.title }}</h2>
 

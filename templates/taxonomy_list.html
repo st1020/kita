@@ -1,4 +1,5 @@
-{% extends "index.html" %}<!---->
+{#<!-- prettier-ignore -->#}
+{% extends "index.html" %}
 {% block main %}
 <!-- Taxonomy Title -->
 <h1 class="mb-16">{{ taxonomy.name | title }}</h1>
@@ -11,7 +12,7 @@
       <sup class="opacity-60">{{ term.page_count }}</sup>
     </h3>
 
-    {%for page in term.pages | slice(end=5) %}
+    {%for page in term.pages[:5] %}
     <a class="secondary-link my-0.5" href="{{ page.permalink }}">{{ page.title }}</a>
     {% endfor %}<!---->
 
@@ -19,8 +20,8 @@
     <span class="flex justify-end">
       <a class="secondary-link mt-1 pr-2" href="{{ term.permalink }}">More >></a>
     </span>
-    {% endif %}<!---->
+    {% endif %}
   </div>
-  {% endfor %}<!---->
+  {% endfor %}
 </div>
 {% endblock main %}

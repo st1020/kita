@@ -1,11 +1,13 @@
+{% component gallery(@page) %}
 <div class="not-prose flex flex-wrap gap-2">
   {% for asset in page.assets -%}<!---->
-  {% if asset is matching("[.](jpg|png)$") %}<!---->
+  {% if asset is matching(pat="[.](jpg|png)$") %}<!---->
   {% set image = resize_image(path=asset, width=240, height=180) %}<!---->
-  {% set asset_name = asset | split(pat="/") | slice(start=-1) | join(sep="/") %}
+  {% set asset_name = (asset | split(pat="/"))[-1] %}
   <a href="{{ get_url(path=page.path ~ asset_name) }}" target="_blank">
     <img class="rounded-lg" src="{{ image.url }}" />
   </a>
   {% endif %}<!---->
   {% endfor %}
 </div>
+{% endcomponent gallery %}

@@ -2,7 +2,7 @@
 <footer class="mt-12 flex flex-col">
   {% set_global term_names = [] %}<!---->
   {% for term_name, terms in page.taxonomies %}<!---->
-  {% set_global term_names = term_names | concat(with=term_name) %}<!---->
+  {% set_global term_names = [...term_names, term_name] %}<!---->
   {% endfor %}<!---->
   {% for term_name in term_names | sort %}
   <div class="mb-2 flex flex-wrap">
@@ -10,7 +10,7 @@
     {% for term in page.taxonomies[term_name] %}
     <a
       class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
-      href="{{ get_taxonomy_url(kind=term_name, name=term) | safe }}"
+      href="{{ get_taxonomy_url(kind=term_name, term=term) | safe }}"
       >{{ term }}</a
     >
     {% endfor %}

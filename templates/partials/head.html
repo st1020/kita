@@ -1,20 +1,17 @@
-{% import "macros.html" as macros %}
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <!-- Title -->
-  <title>
-    {% if page.title %}{{ page.title }} - {{ config.title }}{% else %}{{ config.title }}{% endif %}
-  </title>
+  <title>{{ page.title ~ " - " ~ config.title if page?.title else config.title }}</title>
 
   <!-- Meta -->
   <meta name="theme-color" />
 
   {% if page %}
   <!-- Author -->
-  {% set page_title = page.title | default(value=config.title) %}
+  {% set page_title = page?.title | default(value=config.title) %}
   <!---->
   {% set description = page.description | default(value=page_title) %}
   <!---->
@@ -27,7 +24,6 @@
   {% set author = config.author | default(value=config.title) %}
   <!---->
   {% endif %}
-  <!---->
   <meta name="description" content="{{ description }}" />
   <meta name="author" content="{{ author }}" />
   <!-- The Open Graph protocol -->
@@ -36,9 +32,9 @@
   <meta property="og:site_name" content="{{ config.title }}" />
   <meta property="og:description" content="{{ description }}" />
   <meta property="og:url" content="{{ page.permalink }}" />
-  {% if page.extra.cover.image %}
+  {% if page.extra.cover?.image %}
   <!---->
-  {% set image = page.extra.cover.image %}
+  {% set image = page.extra.cover?.image %}
   <!---->
   {% elif config.extra.social_image %}
   <!---->
@@ -53,7 +49,6 @@
   {% else %}
   <!-- Author -->
   {% set description = config.description | default(value="A personal blog") %}
-  <!---->
   <meta name="description" content="{{ description }}" />
   <meta name="author" content="{{ config.author | default(value=config.title) }}" />
   <!-- The Open Graph protocol -->
@@ -71,10 +66,10 @@
   <link rel="stylesheet" href="{{ get_url(path=`main.css`) }}" />
   <style>
     :root {
-      --bg: {{ config.extra.style.bg_color | default(value="#f4f4f5") }};
-      --bg-dark: {{ config.extra.style.bg_dark_color | default(value="#18181b") }};
-      --header: {{ config.extra.style.header_color | default(value="#e4e4e7") }};
-      --header-dark: {{ config.extra.style.header_dark_color | default(value="#27272a") }};
+      --bg: {{ config.extra.style?.bg_color | default(value="#f4f4f5") }};
+      --bg-dark: {{ config.extra.style?.bg_dark_color | default(value="#18181b") }};
+      --header: {{ config.extra.style?.header_color | default(value="#e4e4e7") }};
+      --header-dark: {{ config.extra.style?.header_dark_color | default(value="#27272a") }};
     }
   </style>
 
@@ -91,19 +86,19 @@
   {% endif %}
 
   <!-- Preload -->
-  {% if section.path is defined and section.path == "/" and (paginator is undefined or
+  {% if section?.path is defined and section.path == "/" and (paginator is undefined or
   paginator.current_index == 1) %}
   <!-- Avatar -->
-  {% if config.extra.profile.avatar_url %}
-  <link rel="preload" as="image" href="{{ get_url(path=config.extra.profile.avatar_url) }}" />
+  {% if config.extra.profile?.avatar_url %}
+  <link rel="preload" as="image" href="{{ get_url(path=config.extra.profile?.avatar_url) }}" />
   {% endif %}
 
   <!-- Social List -->
-  {% if config.extra.profile.social and section.path == "/" and (paginator is undefined or
+  {% if config.extra.profile?.social and section.path == "/" and (paginator is undefined or
   paginator.current_index == 1) %}
   <!---->
-  {% for social in config.extra.profile.social %}
-  <link rel="preload" as="image" href="{{ macros::get_social_icon(icon=social.name) }}" />
+  {% for social in config.extra.profile?.social %}
+  <link rel="preload" as="image" href="{{<__social_icon_url icon={social.name} />}}" />
   {% endfor %}
   <!---->
   {% endif %}
@@ -114,27 +109,25 @@
   <link rel="preload" as="image" href="{{ get_url(path=`icons/theme.svg`) }}" />
 
   <!-- Math -->
-  {% if page.extra.math | default(value=config.extra.math) %}
+  {% if page?.extra?.math | default(value=config.extra.math) %}
   <!---->
   {% include "partials/math.html" %}
   <!---->
   {% endif %}
-  <!---->
 
   <!-- Mermaid -->
-  {% if page.extra.mermaid | default(value=config.extra.mermaid) %}
+  {% if page?.extra?.mermaid | default(value=config.extra.mermaid) %}
   <!---->
   {% include "partials/mermaid.html" %}
   <!---->
   {% endif %}
-  <!---->
 
   <!-- Favicon -->
   <link rel="icon" href="{{ get_url(path=`favicon.ico`) }}" />
   <link rel="apple-touch-icon" href="{{ get_url(path=`apple-touch-icon.png`) }}" />
 
   <!-- Feeds -->
-  {% if config.generate_feed %}
+  {% if config.generate_feeds %}
   <!---->
   {% if "atom.xml" in config.feed_filenames %}
   <link
@@ -155,8 +148,8 @@
   {% endif %}
 
   <!-- Canonical -->
-  <link rel="canonical" href="{{ page.permalink | default(value=get_url(path=``)) }}" />
+  <link rel="canonical" href="{{ page?.permalink | default(value=get_url(path=``)) }}" />
 
   <!-- Head inject -->
-  {% include "injects/head.html" ignore missing %}
+  {% include "injects/head.html" %}
 </head>

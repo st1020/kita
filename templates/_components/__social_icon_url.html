@@ -1,4 +1,4 @@
-{%- macro get_social_icon(icon) -%}
+{%- component __social_icon_url(icon: string) -%}
 {%- set path = "icons/" ~ icon ~ ".svg" -%}
 {%- set meta = get_image_metadata(path=path, allow_missing=true) -%}
 {%- if meta -%}
@@ -6,4 +6,4 @@
 {%- else -%}
 {{- "https://cdn.jsdelivr.net/npm/simple-icons/icons/" ~ icon ~ ".svg" -}}
 {%- endif -%}
-{%- endmacro get_social_icon -%}
+{%- endcomponent __social_icon_url -%}

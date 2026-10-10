@@ -2,7 +2,7 @@ name = "Kita"
 description = "Kita is a clean, elegant and simple blog theme for Zola."
 license = "MIT"
 homepage = "https://github.com/st1020/kita"
-min_version = "0.17.0"
+min_version = "0.23.6"
 demo = "https://kita-zola.pages.dev"
 
 [author]
