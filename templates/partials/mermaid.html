@@ -1,9 +1,10 @@
 <script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@12/dist/mermaid.esm.min.mjs";
 
   const initMermaid = (isDark) => {
     mermaid.initialize({
       theme: isDark ? "dark" : "default",
+      look: "classic",
       startOnLoad: false,
     });
     mermaid.run();
